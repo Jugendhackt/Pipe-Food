@@ -27,12 +27,12 @@ void loop() {
           weg_A = false;
           digitalWrite(led_A, LOW);
           digitalWrite(led_B, HIGH);
-          analogWrite(servo, 60);        //min.PWM 60
+          analogWrite(servo, 145);        //min.PWM 60
       } else {
           weg_A = true;
           digitalWrite(led_A, HIGH);
           digitalWrite(led_B, LOW);
-          analogWrite(servo, 250);      //max.PWM 250
+          analogWrite(servo, 185);      //max.PWM 250
       }
     }
   } 
