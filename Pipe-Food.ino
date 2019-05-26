@@ -18,20 +18,22 @@ void loop() {
   //button:
   int buttonState = digitalRead(button); 
   if (buttonState != lastButtonState) {
-    lastButtonState = buttonState;
-    if (buttonState == HIGH ) {
-      if (weg_A) {
-        weg_A = false;
-        digitalWrite(led_A, LOW);
-        digitalWrite(led_B, HIGH);
-        analogWrite(servo, 60);        //min.PWM 60
-        
+    delay (100);
+    buttonState = digitalRead(button);
+    if (buttonState != lastButtonState) {
+      lastButtonState = buttonState;
+      if (buttonState == HIGH ) 
+        if (weg_A) {
+          weg_A = false;
+          digitalWrite(led_A, LOW);
+          digitalWrite(led_B, HIGH);
+          analogWrite(servo, 60);        //min.PWM 60
       } else {
-        weg_A = true;
-        digitalWrite(led_A, HIGH);
-        digitalWrite(led_B, LOW);
-        analogWrite(servo, 240);      //max.PWM 240
+          weg_A = true;
+          digitalWrite(led_A, HIGH);
+          digitalWrite(led_B, LOW);
+          analogWrite(servo, 250);      //max.PWM 250
       }
     }
   } 
-}
+} 
